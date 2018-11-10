@@ -3,3 +3,7 @@ git is a free software
 git is really interesiting
 i want to test the checkout
 
+<<<<<<< Updated upstream
+=======
+now i want to test stash
+>>>>>>> Stashed changes
