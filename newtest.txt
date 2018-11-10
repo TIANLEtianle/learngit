@@ -1,3 +1,4 @@
 i want to study git
 git is a free software
 git is really interesiting
+i want to test the checkout
