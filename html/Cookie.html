@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookie存储AIP</title>
+	<style>
+	    form {
+	    	width: 200px;
+	    }
+
+	    select , button {
+	    	margin: 10px;
+	    	width: 180px;
+	    }
+	</style>
+</head>
+<body>
+	<h3>分别使用localStorage和sessionStroge存储数据</h3>
+	<hr />
+	<p>
+		选择颜色
+	</p>
+		<form>
+			<fieldset>
+				<legend>颜色信息</legend>
+				<select id = "color">
+					<option value ="red">red</option>
+					<option value ="green">green</option>
+					<opriont value ="bulue">bule</opriont>
+				</select>
+			    <br />
+			    <button onclick="savelocal()">local存储</button>
+			    <br />
+			    <button onclick="savesession()">mession存储</button>
+		    </fieldset>
+		</form>
+		<script>
+			function savelocal() {
+				var color = document.getElementById("color").value;
+				alert("颜色信息已经存储到local中");
+				localStorage.setItem("color",color);
+			}
+
+			function savesession() {
+				var color = document.getElementById("color").value;
+				alert("颜色信息已经存储到session");
+				sessionStorage.setItem("color",color);
+			}
+		</script>
+</body>
+</html>

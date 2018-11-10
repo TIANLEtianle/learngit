@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type = "text/javascript">
+		function add() {
+			var n1 = Number(document.form1.txt1.value);
+			var n50 = 0;
+		    var n20 = 0;
+		    var n10 = 0;
+		    var n5 = 0;
+		    var n11 = 0;
+			while(n1 >= 50) {
+				n50++;
+				n1 = n1 - 50;
+			}
+			while(n1 >= 20) {
+				n20 ++;
+				n1 -= 20;
+			}
+			while(n1 >= 10) {
+				n10 ++;
+				n1 -=10;
+			}
+			while(n1 >= 5) {
+				n5++;
+				n1 -= 5;
+			}
+			while(n1 >= 1) {
+				n11++;
+				n1 -= 1;
+			}
+			document.form1.txt2.value = n50;
+			document.form1.txt3.value = n20;
+			document.form1.txt4.value = n10;
+			document.form1.txt5.value = n5;
+			document.form1.txt6.value = n11;
+		}
+	</script>
+	<form name = "form1">
+		<fieldset>
+			<legend>找零</legend>
+			 <label>输入金额:
+			 <input type = "text" name = "txt1"></label><br />
+			 <input type = "button" onclick= "add()" value = "找零"/><br />
+			 <label>50元:
+			 <input type = "text" name = "txt2"></label><br />
+			 <label>20元:
+			 <input type = "text" name = "txt3"></label><br />
+			 <label>10元:
+			 <input type = "text" name = "txt4"></label><br />
+			 <label>5元:
+			 <input type = "text" name = "txt5"></label><br />
+			 <label>1元:
+			 <input type = "text" name = "txt6"></label><br />
+	    </fieldset>
+	</form>
+</body>
+</html>

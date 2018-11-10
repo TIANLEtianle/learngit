@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>下拉框联动</title>
+<script>
+var data = [["北京","天津","上海","重庆"],
+                                              ["广州","深圳","珠海","东莞"],
+                                              ["挂林","柳州","南通","常州"],
+                                              ["长沙","湘潭","龙岩","南平"],
+                                              ["兰州","白银","定西","敦煌"]];
+              
+              function changePro()
+              {
+              var objPro=document.getElementById("province");
+              var objCity=document.getElementById("city");
+              var cities=data[objPro.selectedIndex-1];
+              objCity.length=1;//只保留第一项
+              for(var i=0;i<cities.length;i++)
+              {//第一项是显示字符串，第二项是表单提交后对应的值
+              objCity[i+1]=new Option(cities[i],cities[i]);
+              }
+              }
+
+</script>
+</head>
+<body>
+<div>
+<select id="province" onchange="changePro()">
+<option value="0">-请选择-</option>
+<option value="直辖市">直辖市</option>
+<option value="广东">广东</option>
+<option value="广西">广西</option>
+<option value="湖南">湖南</option>
+<option value="甘肃">甘肃</option>
+</select>省
+
+<select id="city" name="city">
+<option value="0">-请选择-</option>
+</select>市
+</div>
+</body>
+</html>
+--------------------- 
+作者：拓拓荒者 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_38870931/article/details/80256422 
+版权声明：本文为博主原创文章，转载请附上博文链接！

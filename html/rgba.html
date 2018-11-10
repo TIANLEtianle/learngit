@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自制轮番图</title>
+	<style>
+	    .img {
+	    	padding: 0px;
+	    	margin: 0px;
+	    	width: 800px;
+	    	height: 700px;
+	    }
+
+	    .container {
+	    	padding: 0px;
+	    	margin: 0px auto;
+	    	width: 1000px;
+	    	height: 737px;
+           
+	    }
+	    .container01 {
+	    	padding: 0px;
+	    	margin: 0px;
+	    	height: 737px;
+	    	width: 1000px;
+	    	
+	    }
+	    .container02 {
+	    	height: 0px;
+	    	width: 1000px;
+	    	
+	    }
+	    .ul {
+	    	margin: 0px;
+	    	padding: 0px auto;
+	    	position: absolute;
+	    	top: 774px;
+	    	left: 380px;
+	    	list-style-type: none;
+	    }
+	   .ul li {
+	   	    padding-left: 30px ;
+	   	    margin: 5px;
+	   	    float: left;
+            width: 50px;
+            height: 10px;
+            background-color: rgb(111,121,121,0.7);
+
+	   }
+	   .leftDiv {
+	   	    position: absolute;
+	   	    top: 400px;
+	   	    left: 200px;
+	   	    width: 30px;
+	   	    height: 40px;
+	   	    background: rgb(111,121,111,0.6);
+	   	    font-size: 20px;
+	   	    text-align: center;
+	   }
+	   .rightDiv {
+	   	    position: absolute;
+	   	    top: 400px;
+	   	    right: 200px;
+	   	    width: 30px;
+	   	    height: 40px;
+	   	    background: rgb(111,121,111,0.6);
+	   	    font-size: 20px;
+	   	    text-align: center;
+	   }
+	</style>
+</head>
+<body>
+	<h3>自制轮番图</h3>
+	<hr />
+    <script>
+    	let a = 0;
+    	let run = true;
+    	let t = 0;
+    	let arr = new Array(6);
+    	for(var i = 0;i < arr.length;i++) {
+    		arr[i] = "image/" + i + ".jpg";
+    	}
+    	window.onload = start;
+
+    	function start() {
+           run = true;
+           t = setInterval(changeImg,2000);
+          
+    	}
+
+    	function stop() {
+    		run = false;
+    		clearInterval(t);
+    	}
+    	function changeImg() {
+    		if(run == true) {
+    			var b = document.getElementById("images");
+    			if(a >= arr.length) {
+    				a = 0;
+    				b.src = arr[a];
+    				liBox();
+    				a++;
+    			} 
+    			else {
+    				b.src = arr[a];
+    				liBox();
+    				a++;
+    			}
+    		}
+    	}
+    	function now(n) {
+    		a = n;
+    		liBox();
+    		document.getElementById("images").src = arr[a];
+    		
+    	}
+
+    	function liBox() {
+    		 for(var i = 0;i < 6;i++) {
+    			if(a == i) {
+    				document.getElementById("li" + a).style.backgroundColor = "green";
+    			}
+    			else {
+                    document.getElementById("li" + i).style.backgroundColor = "";
+    			}
+    		}
+    	}
+
+    	function back() {
+    		a--;
+    		if(a < 0) {
+    			a = 5;
+    		}
+    		document.getElementById("images").src = arr[a];
+    		liBox();
+    	}
+
+    	function next() {
+    		a++;
+    		if(a >= 6) {
+    			a = 0;
+    		}
+    		document.getElementById("images").src = arr[a];
+    		liBox();
+    	}
+
+    	function animate(ele,target) {
+    		clearInterval(t);
+    		var speed = 
+    	}
+    </script>
+    <div class="container" onmousemove = "stop()" onmouseout = "start()">
+    	<div class = "container01"><img id = "images" src = "image/0.jpg" width= "1000" height = "700"  alt = "起始图片"></div>
+    	<a class = "leftDiv" onclick = "back()" onmouseover = "stop()">
+    		&gt
+    	</a>
+    	<a class = "rightDiv" onclick = "next()" onmouseover = "stop()">
+    		&lt
+    	</a>
+    	<div class = "container02">
+    		<ul class = "ul">
+    			<li id = "li0" onmouseover = "now(0)" style="background: green">
+    			<li id = "li1" onmouseover = "now(1)">
+    			<li id = "li2" onmouseover = "now(2)">
+    			<li id = "li3" onmouseover = "now(3)">
+    			<li id = "li4" onmouseover = "now(4)">
+    			<li id = "li5" onmouseover = "now(5)">
+    			<li id = "li0" onmouseover = "now(0)">
+    		</ul>
+    	</div>
+    </div>
+    <br />
+</body>
+</html>

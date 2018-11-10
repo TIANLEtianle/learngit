@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Changing a Textbox Value Example</title>
+<script type="text/javascript">
+function setValues(){
+var yea=document.getElementById("txt1");
+var mon = document.getElementById("txt2");
+var day=document.getElementById("txt3");
+var str = yea.value +"/"+ mon.value;
+var nextmon = parseInt(mon.value) + 1;
+var str2 = yea.value + "/" + nextmon;
+var date1 = new Date(str);
+var date2 = new Date(str2);
+var first = date1.getDay();
+date2.setDate(date2.getDate() - 1);
+
+day.value = "星期日\t星期一\t星期二\t星期三\t星期四\t星期五\t星期六\n";
+if(parseInt(mon.value) !== 12) {
+for(var i = 0;i < date1.getDay();i++) {
+	day.value += "   \t";
+}
+for(var i = 1;i <= date2.getDate();i++) {
+	day.value += i + " \t";
+}
+}
+else {
+	for(var i = 0;i<date1.getDay();i++) {
+		day.value += "   \t";
+	}
+	for(var i = 1;i <=31;i++) {
+		day.value += i + " \t";
+	}
+}
+}
+</script>
+</head>
+<body>
+年:<input type="text" size="12" id="txt1" /><br />
+月:<input type="text" size="12" id="txt2" /><br />
+日期:<br /><textarea rows="8" cols="50" id="txt3"></textarea><br />
+<Button onclick="setValues()" />显示
+</body>
+</html>

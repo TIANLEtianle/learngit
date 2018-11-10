@@ -1,0 +1,31 @@
+git init   git初始化，产生一个git版本库
+git add file   将文件从工作区提交到暂存区
+git commit -m  将暂存区内的内容提交到master分支中
+git status     查看当前产库的状态，如果文件还在暂存区未提交时工作区的文件被修改，测绘有check的提示。如果文件没有被修改且未被提交，则会有commit的提示
+git reste --hard   将文件的版本返回到指定的版本
+git log        查看所有提交过的版本的提示
+git reflog     查看所有的历史操作
+git diff       查看文件所做的修改
+git checkout --file   将工作区中对的文件版本返回到与仓库中的最新版本
+
+
+远程连接仓库
+
+git remote add origin git@github.com:TIANLEtianle/learngit.git        将远程仓库与本地仓库连接
+
+
+添加至远程仓库
+git push -u origin master     将本地仓库中的master分支提交到远程仓库中   //加上-u的目的是将本地仓库的master分支和远程仓库的master分支连接起来，以后提交分支只需 git push origin master即可
+
+
+从远程仓库克隆
+git clone git@github.com:TIANLEtianle/learngit.git  
+
+创建与合并分支
+git branch dev       创建dev分支
+git checkout dev     从其他分支跳转到dev分支
+git checkout -b dev  创建并跳转到dev分支
+git merge dev        将dev分支合并到master分支
+git branch           查看当前所有的分支
+git branch -d dev    删除当前分支
+

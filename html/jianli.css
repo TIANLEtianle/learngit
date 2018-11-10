@@ -1,0 +1,108 @@
+.div {
+	margin: 10px auto;
+	width: 1000px;
+	position: absolute;
+	border: 6px groove;
+	height: 1100px;
+	left: 13%;
+}
+.div01 {
+	margin: 10px auto;
+	padding: 0px;
+	position: absolute;
+	left: 10%;
+	width: 800px;
+	height: 230px;
+	
+    float: right;
+}/*设置标题栏的格式*/
+
+.div01a {
+    position: absolute;
+    top: 5%;
+	width: 280px;
+	height: 200px;
+	
+	float: left;
+}
+
+.div02 {
+	width: 800px;
+	height: 200px;
+	
+	position: absolute;
+	top: 24%;
+	left: 10%;
+}
+
+.div03 {
+	width: 800px;
+	height: 150px;
+	
+	position: absolute;
+	top: 43%;
+	left: 10%;
+}
+
+.div04 {
+	width: 800px;
+	height: 120px;
+	position: absolute;
+	
+	top: 58%;
+	left: 10%;
+}
+
+.div05 {
+	width: 800px;
+	height: 130px;
+	position: absolute;
+	
+	top: 70%;
+	left: 10%;
+}
+
+.div06 {
+	width: 800px;
+	height: 150px;
+	position: absolute;
+	
+	top: 84%;
+	left: 10%;
+}
+.hr01 {
+	height: 5px;
+	width: 800px;
+	background-color: #8f8;
+	position: absolute;
+	top: 97%;
+}/*第一栏的横线*/
+
+.hr02 {
+	height: 2px;
+	background-color: #ccc;
+
+}/*其他栏的横线*/
+
+
+dd {
+	position: absolute;
+	left: 30px;
+}
+
+p {
+	height: 20px;
+	margin-bottom: 5px;
+	
+}
+li {
+	margin: 3px;
+}
+.img {
+	position: absolute;
+	right: 10%;
+}
+
+.ul {
+	float: left;
+}

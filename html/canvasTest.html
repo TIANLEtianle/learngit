@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图案填充</title>
+	
+</head>
+<body>
+	
+	<canvas id = "myCanvas" width = "300" height = "300" style = "border: 1px solid;">
+		您的浏览器不支持
+	</canvas>
+	<script>
+		window.onload = function() {
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+
+		var img = new Image();
+		img.src = "D:/Web/image/半寸照1.png";
+        
+      
+		img.onload = function() {
+			var pattern = ctx.createPattern(img,"no-repeat");
+            ctx.translate(10,10)
+			ctx.beginPath();
+			ctx.arc(100,100,125,0,Math.PI * 2,true);
+			ctx.stroke();
+			ctx.fillStyle = pattern;
+			ctx.fill();
+
+
+		}
+}
+	</script>
+</body>
+</html>

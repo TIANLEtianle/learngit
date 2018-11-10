@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实时更新定位</title>
+	<style>
+	   #test {
+	   	border: 1px solid;
+	   	width: 400px;
+	   	hegiht: 300px;
+	   }
+	 </style>
+</head>
+<body onload = "getLocation()">
+	<h3>实时更新地理定位</h3>
+	<hr />
+	<div id = "test"></div>
+	<script>
+		var x = document.getElementById("test");
+		function getLocation() {
+			if(navigator.geolocation) {
+				var watchID = navigator.geolocation.watchPosition(showPosition,showError,options);
+
+			}
+			else {
+				x.innerHTML= "浏览器不支持";
+			}
+		}
+
+		function showPosition(position) {
+			var date = new Date();
+			x.innerHTML = "本次更新时间: " + date.toLocaleString() +
+			"<br />您的纬度是： " + position.coords.latitude + 
+			"<br />您的经度是: " + position.coords.longitude +
+			"<br /><br />";
+		}
+
+		function showError(error) {
+			switch(error.code) {
+				case error.PERMISSION_DENTED:
+				  x.innerHTML = "用户拒绝了您的请求。"
+				  break;
+				case error.POSITION_UNAVAILABLE:
+				  x.innerHTML = "位置信息不饿用"
+				  break;
+
+				case error.TIMEOUT:
+				  x.inenrHTML = "请求超时"
+				  break;
+			}
+		}
+			var options = {
+				enableHigAccuracy: true,
+				maximumAge : 2000,
+				timeout: 2000
+
+			};
+		</script>
+	
+</body>
+</html>

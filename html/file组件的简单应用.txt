@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+        <meta charset="utf-8">
+        <title>文件上传组件file的简单应用</title>
+    </head>
+    <body>
+        <h2>文件上传组件的简单应用<h2>
+        <hr />
+        <form method="post" action="URL">
+           所有文件形式
+            <input type="file" name="file01" />
+            <br />
+           word文件形式
+            <input type="file" name="file02" accept="application/msword" />
+            <br />
+            excel文件形式
+             <input type="file" name="file03" accept="application/msexcel" />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>aotofocus的简单应用</title>
+	<style>
+	  form {
+	  	width: 280px;
+	  	margin: 20px;
+	  }
+
+	  div {
+	  	text-align: center;
+	  	margin-top: 10px;
+	  }
+	</style>
+</head>
+<body>
+	<h3>autofocus的简单应用</h3>
+	<hr />
+	<form method = "post" action="URL" target="_self">
+		用户名:
+		<input type="text" name = "username" autocomplete="on"/>
+		<br />
+		密码:
+		<input type="password" name="pwd" autofocus/>
+	</form>
+	<form>
+		<fieldset>
+			<legend>新增属性placeholder的简单应用
+			</legend>
+			<label>用户名:
+				<input type="text" name="user" placeholder="请输入用户名" />
+			</label>
+		    <br />
+		    <label>密码:
+		    	<input type="password" name = "pwd" placeholder="请输入密码" autoconplete="on" />
+		    </label>
+		</fieldset>
+	</form>
+    <br />
+    <form method = "post" action="URL" target="_self">
+    	<fieldset>>
+    		<legend>max min step的应用
+    		</legend>
+    		<label>日期:
+    			<input type = "date" name="datetime1" max="2016-10-20" min="2016-10-01" step="5" title="哈哈" />
+    		</label>
+    	</fieldset>
+    	<div>
+    		<input type = "submit" value = "提交" />
+    	</div>
+	</form>
+	<br />
+	<form method="post" action="http://www.baidu.com" >
+		<fieldset>
+			<legend>autocomplete的应用</legend>
+			<label>关键词:
+				<input type="search" name="search" autocomplete="on"/>
+			</label>
+		</fieldset>
+		<input type = "submit" value="提交" />
+	</form>
+</body>
+</html

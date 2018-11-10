@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+	  <title>简单的拖放练习</title>
+	  <style>
+	      p{
+		     width: 100px;
+			 height: 100px;
+			 background-color: rgb(110,110,110);
+			
+		 }
+		 div#container { 
+		     width: 200px;
+			 height: 200px;
+			 border: 2px dashed;
+			 background-color: rgb(101,23,12); 
+		}
+	  </style>
+	</head>
+	<body>
+	   <p id = "test" draggable="true" ondragstart="drag(event)">
+	      这是一个可以被拖放的段落
+	   </p>
+	   <br />
+	   <div id="container" ondragover="allowDrop(event)" ondrop="drop(event)">
+	      这是一个可以放置拖放元素的区域
+	   </div>
+	   <script>
+	       function drag(ev) {
+		         ev.dataTransfer.setData("text/plain",ev.target.id);
+		    }
+			function allowDrop(ev) {
+			     ev.preventDefault();
+		    }
+			function drop(ev) {
+			     ev.preventDefault();
+			     var id = ev.dataTransfer.getData("text");
+				 var p = document.getElementById(id);
+				 ev.target.appendChild(p);
+			}
+		</script>
+	</body>
+</html>

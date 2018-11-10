@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+	<style>
+	  .img {
+	     position: fixed;
+	     bottom: 100px;
+	     right: 50px;
+	     width: 50px;
+	     height: 50px;
+	     cursor: pointer;
+	     display: none;
+	  }
+
+	  .div {
+	  	width: 1100px;
+	  	margin: 100px auto;
+	  	font-size: 30px;
+	  }
+	</style>
+</head>
+<body>
+	<img class = "img" id = "img" src = "D:/Web/image/1.jpg">
+	<div class = "div">
+		我是最顶端.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+    生命壹号，永不止步.....<br>
+   </div>
+   <script>
+   	window.onload = function () {
+            //需求：被卷去的头部超过100显示小火箭，然后点击小火箭屏幕缓慢移动到最顶端。
+            //难点：我们以前是移动盒子，现在是移动屏幕，我们没有学过如何移动屏幕。
+            //      技术点：window.scrollTo(x,y);浏览器显示区域跳转到指定的坐标
+            //步骤：
+            //1.老三步
+           var img = document.getElementById("img");
+
+           window.onscroll = function() {
+           	if(scroll().top > 200) {
+           		img.style.display = "block";
+           	}
+           	else {
+           		img.style.display = "none";
+           	}
+
+           	leader = scroll().top;
+           }
+
+           var timer = null;
+           var target = 0;
+           var leader = 0;
+
+           img.onclick = function() {
+           clearInterval(timer);
+           timer = setInterval(function() {
+           	var step = (target - leader) / 10;
+           	step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+           	leader = leader + step;
+
+           	window.scrollTo(0,leader);
+
+           	if(leader === 0) {
+           		clearInterval(timer);
+           	}
+           },25);
+           }
+       }
+
+      function scroll() {  // 开始封装自己的scrollTop
+    if (window.pageYOffset != null) {  // ie9+ 高版本浏览器
+        // 因为 window.pageYOffset 默认的是  0  所以这里需要判断
+        return {
+            left: window.pageXOffset,
+            top: window.pageYOffset
+        }
+    }
+    else if (document.compatMode === "CSS1Compat") {    // 标准浏览器   来判断有没有声明DTD
+        return {
+            left: document.documentElement.scrollLeft,
+            top: document.documentElement.scrollTop
+        }
+    }
+    return {   // 未声明 DTD
+        left: document.body.scrollLeft,
+        top: document.body.scrollTop
+    }
+}
+   	</script>
+</body>
+</html>
