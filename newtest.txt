@@ -3,4 +3,3 @@ git is a free software
 git is really interesiting
 i want to test the checkout
 
-i want to test a bug
