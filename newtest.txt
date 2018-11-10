@@ -3,4 +3,15 @@ git is a free software
 git is really interesiting
 i want to test the checkout
 
+<<<<<<< HEAD
 i want to test stash
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+now i want to test stash
+>>>>>>> Stashed changes
+=======
+now i want to test stash
+>>>>>>> Stashed changes
+>>>>>>> dev
